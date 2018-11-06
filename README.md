@@ -28,6 +28,7 @@ that it misses the developer's intent, i.e. filtering reading tasks, sorting by 
 - Find all unique tags from all tasks.
 - Check if all reading tasks have tag books.
 - Creating a summary of all titles.
+(Code Refactoring *** Adding new feature *** Reading Domain Driven Development *** Reading Design Patterns *** Reading Java Lambda *** Blogging about Lambda Functions *** Blogging about Lambda Functions)
 
 # Hint
 Use Streams.
@@ -43,6 +44,7 @@ Also write the following functions:
 - Finding Task with longest title
 - Count total number of tags
 - Generate summary of Task titles
+(Code Refactoring;Adding new feature;Reading Domain Driven Development;Reading Design Patterns;Reading Java Lambda;Blogging about Lambda Functions;Blogging about Lambda Functions)
 - Grouping tasks by type
 - Grouping by TaskType and createdOn
 
