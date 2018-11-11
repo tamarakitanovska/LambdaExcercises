@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Function;
 
 public class Task {
 
@@ -27,6 +28,10 @@ public class Task {
         type = builder.type;
         createdOn = builder.createdOn;
         tags = builder.tags;
+    }
+
+    public int getTitleSize(){
+        return title.length();
     }
 
     public static List<Task> getTasks() {

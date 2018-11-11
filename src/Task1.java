@@ -2,27 +2,30 @@ import static java.lang.System.*;
 
 import domain.Task;
 import domain.TaskType;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Task1 {
 
     public static void main(String[] args) {
-        List<Task> tasks = Task.getTasks();
-        List<String> titles = taskTitles(tasks);
-        for (String title : titles) {
-            out.println(title);
-        }
-    }
 
-    private static List<String> taskTitles(List<Task> tasks) {
-        List<String> readingTitles = new ArrayList<>();
-        for (Task task : tasks) {
-            if (task.getType() == TaskType.READING) {
-                readingTitles.add(task.getTitle());
-            }
-        }
-        return readingTitles;
+        List<Task> tasks = Task.getTasks();
+
+        Function<Task, String> getTaskTitle = Task::getTitle;
+        Predicate<Task> testTitles = t->t.getType().equals(TaskType.READING);
+
+        List<Task> filteredTasks = tasks.stream()
+                .filter(t->testTitles.test(t))
+                .collect(Collectors.toList());
+
+        filteredTasks.stream()
+                .forEach(t-> System.out.println(getTaskTitle.apply(t)));
+
     }
 
 }
